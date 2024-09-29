@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WebSocket</title>
+</head>
+<body>
+
+    <div class="container">
+    
+        <h1>WebSocket Клиент</h1>
+
+        <div id="message" class=""></div>
+
+        <div class="form">
+            <input type="text" id="messageInput" placeholder="Введите сообщение">
+            <button id="sendButton">Отправить</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.addEventListener('open', () => {
+            console.log('Соединение установлено');
+        })
+
+        socket.addEventListener('message', () => {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML += `<p>${event.data}</p>`;
+        })
+
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+            socket.send(message);
+            messageInput.value = '';
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+input, button {
+    font-family: sans-serif;
+    color: #000;
+    font-weight: 500;
+    font-size: 24px;
+
+    outline: none;
+}
+
+input::placeholder {
+    font-family: sans-serif;
+    color: #000;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 36px;
+    text-decoration: underline;
+
+    margin: 48px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.form input {
+    padding: 6px 0 6px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.form input:hover {
+    border: 1px solid #4c4c4c;
+}
+
+.form button {
+    padding: 6px 0;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.form button:hover {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 48px;
+    }
+}
+
+@media (max-width: 500px) {
+    input, button {
+        font-family: sans-serif;
+        color: #000;
+        font-weight: 500;
+        font-size: 20px;
+    
+        outline: none;
+    }
+    
+    input::placeholder {
+        font-family: sans-serif;
+        color: #000;
+        font-weight: 500;
+        font-size: 20px;
+    }
+}
